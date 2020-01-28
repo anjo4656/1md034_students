@@ -5,6 +5,30 @@ body {
     font-size: 18px;
 }
 
-#allergen {
+.allergen {
     font-weight: bold;
+}
+/*
+#lactose {
+        color: #00ffff;
+}
+
+#gluten {
+        color: #ff5500;
+}
+*/
+
+#burger_section {
+    color: #ffffff;
+    background-color: #000000
+}
+
+#customer_section {
+
+}
+
+button:hover {
+    background-color: #cccccc;
+    cursor: pointer;
+			  
 }
