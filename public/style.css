@@ -33,6 +33,10 @@ button:hover {
     cursor: pointer;	  
 }
 
+button {
+    margin: 10px 10px;
+}
+
 table {
     width: 65%;
     margin: 0 auto;
@@ -40,6 +44,18 @@ table {
 
 th {
     text-align: left;
+}
+
+h1 {
+    margin-left: 10px;
+}
+
+h2 {
+    margin-left: 10px;
+}
+
+p {
+    margin-left: 10px;
 }
 
 
