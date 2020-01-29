@@ -1,3 +1,4 @@
+
 @import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
 
 body {
@@ -29,6 +30,17 @@ body {
 
 button:hover {
     background-color: #cccccc;
-    cursor: pointer;
-			  
+    cursor: pointer;	  
 }
+
+table {
+    width: 65%;
+    margin: 0 auto;
+}
+
+th {
+    text-align: left;
+}
+
+
+
