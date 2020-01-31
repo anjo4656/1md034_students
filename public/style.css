@@ -75,3 +75,20 @@ p {
     width: 100%;
 }
 
+.burgers {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 200px 230px 200px;
+}
+
+.burger_1 {
+    grid-column: 1;
+}
+
+.burger_2 {
+    grid-column: 2;
+}
+
+.burger_3 {
+    grid-column: 3;
+}
