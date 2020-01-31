@@ -38,7 +38,7 @@ button:hover {
 }
 
 button {
-    margin: 10px 10px;
+    margin: 40px 10px;
 }
 
 table {
@@ -52,7 +52,7 @@ th {
 
 h1 {
     position: absolute;
-    margin-top: -200px;
+    margin-top: -125px;
     margin-left: 10px;
 }
 
