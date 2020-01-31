@@ -49,13 +49,17 @@ table {
 th {
     text-align: left;
 }
-/*
+
 h1 {
+    position: absolute;
+    margin-top: -200px;
     margin-left: 10px;
 }
-*/
+
 header {
     margin-left: 10px;
+    height: 200px;
+    overflow: hidden;
 }
 
 h2 {
@@ -68,5 +72,6 @@ p {
 
 #bar {
     opacity: 0.5;
+    width: 100%;
 }
 
