@@ -1,4 +1,3 @@
-
 function menuItem(picture, name, kcal, gluten, lactose) {
     this.picture = picture;
     this.name = name;
@@ -25,8 +24,37 @@ let longBurger = new menuItem("img/long_burger.jpg", "Long Burger", kcal=850, gl
 
 let tower = new menuItem("img/the_tower.jpg", "The Tower", kcal=2000, gluten=true, lactose=true);
 
-console.log(fireBurger.getName());
-console.log(fireBurger.getKcal());
+var burgerHeader = document.createElement("h1");
+var burgerHeaderText = document.createTextNode("Choose a burger");
+burgerHeader.appendChild(burgerHeaderText);
+
+var fireBurgerPara = document.createElement("p");
+var fireBurgerNode = document.createTextNode(fireBurger.getName());
+fireBurgerPara.appendChild(fireBurgerNode);
+
+var turkeyBurgerPara = document.createElement("p");
+var turkeyBurgerNode = document.createTextNode(turkeyBurger.getName());
+turkeyBurgerPara.appendChild(turkeyBurgerNode);
+
+var doubleCheesePara = document.createElement("p");
+var doubleCheeseNode = document.createTextNode(doubleCheese.getName());
+doubleCheesePara.appendChild(doubleCheeseNode);
+
+var towerPara = document.createElement("p");
+var towerNode = document.createTextNode(tower.getName());
+towerPara.appendChild(towerNode);
+
+var longBurgerPara = document.createElement("p");
+var longBurgerNode = document.createTextNode(longBurger.getName());
+longBurgerPara.appendChild(longBurgerNode);
+
+var element = document.getElementById("div1");
+element.appendChild(burgerHeader);
+element.appendChild(fireBurgerPara);
+element.appendChild(turkeyBurgerPara);
+element.appendChild(doubleCheesePara);
+element.appendChild(towerPara);
+element.appendChild(longBurgerPara);
 
 const vm = new Vue({
     //Here comes the optional elements of the Vue object

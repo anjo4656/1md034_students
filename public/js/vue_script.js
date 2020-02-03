@@ -1,7 +1,11 @@
 const vm = new Vue({
-  el: '#myID',
+  el: '#div1',
   data: {
-    arbitraryVariableName: 'Välj en burgare'
-  }
+    burgerSectionTitle: "Choose a burger",
+    fireBurger: fireBurger.getName(),
+    turkeyBurger: turkeyBurger.getName(),
+    doubleCheese: doubleCheese.getName(),
+    tower: tower.getName(),
+    longBurger: longBurger.getName(),
+  },
 })
-           
