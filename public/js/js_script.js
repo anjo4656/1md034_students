@@ -27,3 +27,7 @@ let tower = new menuItem("img/the_tower.jpg", "The Tower", kcal=2000, gluten=tru
 
 console.log(fireBurger.getName());
 console.log(fireBurger.getKcal());
+
+const vm = new Vue({
+    //Here comes the optional elements of the Vue object
+})
