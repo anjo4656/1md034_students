@@ -1,3 +1,4 @@
+/*
 function menuItem(picture, name, kcal, gluten, lactose) {
   this.picture = picture;
   this.name = name;
@@ -33,3 +34,4 @@ const vm = new Vue({
     burgers: [fireBurger, turkeyBurger, doubleCheese, tower, longBurger],
   },
 })
+*/

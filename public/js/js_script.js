@@ -25,43 +25,66 @@ let longBurger = new menuItem("img/long_burger.jpg", "Long Burger", kcal=850, gl
 let tower = new menuItem("img/the_tower.jpg", "The Tower", kcal=2000, gluten=true, lactose=true);
 
 
-var element = document.getElementById("div1");
+var element = document.getElementById("burgers");
 
+/*
 var burgerHeader = document.createElement("h1");
 var burgerHeaderText = document.createTextNode("Choose a burger");
 burgerHeader.appendChild(burgerHeaderText);
 element.appendChild(burgerHeader);
-
-var burgerList = document.createElement("ul");
-element.appendChild(burgerList);
+*/
 
 var burgers = [fireBurger, turkeyBurger, doubleCheese, tower, longBurger];
 
+var column = 1;
+var row = 1;
+
 for (var burger of burgers) {
-  let burgerPara = document.createElement("li");
-  let burgerNode = document.createTextNode(burger.name);
-  burgerPara.appendChild(burgerNode);
-  burgerList.appendChild(burgerPara);
-  
-  let allergens = document.createElement("ul");
-  burgerPara.appendChild(allergens);
-  
-  if (burger.gluten)
-  {
-  let glutenNode = document.createElement("li");
-  let glutenText = document.createTextNode("Contains Gluten");
-  glutenNode.appendChild(glutenText);
-  allergens.appendChild(glutenNode);
-  }
-  
-  if (burger.lactose)
-  {
-  let lactoseNode = document.createElement("li");
-  let lactoseText = document.createTextNode("Contains Lactose");
-  lactoseNode.appendChild(lactoseText);
-  allergens.appendChild(lactoseNode);
-  }
-  
+    let burgerPara = document.createElement("div");
+    let burgerNode = document.createTextNode(burger.name);
+    burgerPara.appendChild(burgerNode);
+    element.appendChild(burgerPara);
+
+    if (column > 3)
+    {
+	column = 1;
+	row += 1;
+    }
+/*
+    burgerPara.gridColumn = column;
+    burgerPara.gridRow = row;
+*/
+    column += 1;
+	
+    let burgerImg = document.createElement("img");
+    burgerImg.src = burger.picture;
+    burgerImg.height=150;
+    burgerPara.appendChild(burgerImg);
+    
+    let burgerInfo = document.createElement("ul");
+    burgerPara.appendChild(burgerInfo);
+
+    let kcalNode = document.createElement("li");
+    let kcalText = document.createTextNode(burger.kcal + " kcal");
+    kcalNode.appendChild(kcalText);
+    burgerInfo.appendChild(kcalNode);
+    
+    if (burger.gluten)
+    {
+	let glutenNode = document.createElement("li");
+	let glutenText = document.createTextNode("Contains Gluten");
+	glutenNode.appendChild(glutenText);
+	burgerInfo.appendChild(glutenNode);
+    }
+    
+    if (burger.lactose)
+    {
+	let lactoseNode = document.createElement("li");
+	let lactoseText = document.createTextNode("Contains Lactose");
+	lactoseNode.appendChild(lactoseText);
+	burgerInfo.appendChild(lactoseNode);
+    }
+    
 }
 
 
@@ -99,6 +122,8 @@ element.appendChild(doubleCheesePara);
 element.appendChild(towerPara);
 element.appendChild(longBurgerPara);
 */
+/*
 const vm = new Vue({
     //Here comes the optional elements of the Vue object
 })
+*/
