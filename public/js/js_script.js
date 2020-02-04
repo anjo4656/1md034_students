@@ -24,17 +24,12 @@ let longBurger = new menuItem("img/long_burger.jpg", "Long Burger", kcal=850, gl
 
 let tower = new menuItem("img/the_tower.jpg", "The Tower", kcal=2000, gluten=true, lactose=true);
 
-
-var element = document.getElementById("burgers");
+var burgers = [fireBurger, turkeyBurger, doubleCheese, tower, longBurger];
 
 /*
-var burgerHeader = document.createElement("h1");
-var burgerHeaderText = document.createTextNode("Choose a burger");
-burgerHeader.appendChild(burgerHeaderText);
-element.appendChild(burgerHeader);
-*/
+var element = document.getElementById("burgers");
 
-var burgers = [fireBurger, turkeyBurger, doubleCheese, tower, longBurger];
+
 
 var column = 1;
 var row = 1;
@@ -44,17 +39,6 @@ for (var burger of burgers) {
     let burgerNode = document.createTextNode(burger.name);
     burgerPara.appendChild(burgerNode);
     element.appendChild(burgerPara);
-
-    if (column > 3)
-    {
-	column = 1;
-	row += 1;
-    }
-/*
-    burgerPara.gridColumn = column;
-    burgerPara.gridRow = row;
-*/
-    column += 1;
 	
     let burgerImg = document.createElement("img");
     burgerImg.src = burger.picture;
@@ -86,7 +70,7 @@ for (var burger of burgers) {
     }
     
 }
-
+*/
 
 
 /*

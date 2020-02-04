@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
+<!-- Javascript
 <html lang="en">
   <head>
-    <!--link rel="stylesheet" type="text/css" href="reset.css"-->
     <script src="js/js_script.js" defer></script>
     <script src="js/vue_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js" defer></script>
@@ -22,33 +22,105 @@
 	  <h2>Select a burger</h2>
 	  <p>This is where you execute burger selection</p>
 	  <div id="burgers">
-	  <!--  <div class="burger_1">
-	      <p>The Fire Burger</p>
-	      <img src="img/fire_burger.jpg" alt="The Fire Burger" title="The Fire Burger" height="150">
-	      <ul>
-		<li>750 kCal</li>
-		<li>Contains <span id="lactose" class="allergen">lactose</span></li>
-		<li>Contains <span id="gluten" class="allergen">gluten</span></li>
-	      </ul>
-	    </div>
-	    <div class="burger_2">
-	      <p>Fried Turkey Burger</p>
-	      <img src="img/fried_turkey_burger.jpg" alt="The Fire Burger" title="The Fire Burger" height="150">
-	      <ul>
-		<li>600 kCal</li>
-		<li>Contains <span id="lactose" class="allergen">lactose</span></li>
-		<li>Contains turkey</li>
-	      </ul>
-	    </div>
-	    <div class="burger_3">
-	      <p>Double w/ Cheese</p>
-	      <img src="img/double_w_cheese.jpg" alt="The Fire Burger" title="The Fire Burger" height="150">
-	      <ul>
-		<li>1800 kCal</li>
-		<li>Contains <span id="lactose" class="allergen">lactose</span></li>
-		<li>Contains <span id="gluten" class="allergen">gluten</span></li>
-	      </ul>
-	    </div>-->
+	  </div>
+	</section>
+	
+	<section id="customer_section">
+	  <h2>Customer information</h2>
+	  <p>This is where you provide necessary information</p>
+	  
+	  <form>
+	    <p>
+	      <label for="full name">Full Name</label><br>
+	      <input type="text" id="full name" name="full name" required="required" placeholder="First and last name" />
+	    </p>
+	    <p>
+	      <label for="email">E-mail</label><br>
+	      <input type="email" id="email" name="email" required="required" placeholder="E-mail address" />
+	    </p>
+	    <p>
+	      <label for="street">Street</label><br>
+	      <input type="text" id="street" name="street" required="required" placeholder="Street name" />
+	    </p>
+	    <p>
+	      <label for="house">House</label><br>
+	      <input type="number" id="house" name="house" required="required" placeholder="House number" />
+	    </p>
+	    <p>
+	      <label for="payment method">Payment Method</label><br />
+	      <select id="payment method" name="payment method">
+		<option selected="selected">Credit Card</option>
+		<option>PayPal</option>
+		<option>Gold</option>
+	      </select>
+	    </p>
+	    <p>
+	      <label for"gender">Gender</label><br />
+	      <input type="radio" id="male" name="gender" required="required"/>
+	      <label for"male label">Male</label><br />
+	      <input type="radio" id="female" name="gender" required="required"/>
+	      <label for"female label">Female</label><br />
+	      <input type="radio" id="non-binary" name="gender" required="required"/>
+	      <label for"non-binary label">Non-binary</label><br />
+	      <input type="radio" id="undisclosed" name="gender" required="required" checked="checked"/>
+	      <label for"undisclosed label">Undisclosed</label><br />
+	    </p>
+	  </form>	  
+	</section>
+	<button type="submit"><img src="img/check.png" width=20\> Place Order</button>
+      </main>
+      
+      <footer>
+	<hr>
+	<p>&copy 2018 Hypothetical Burgers Inc.</p>
+      </footer>
+      
+    </body>
+</html>
+-->
+
+
+
+                        
+<!-- VUE
+
+<script src="https://vuejs.org/js/vue.js"></script>
+
+-->
+<html lang="en">
+  <head>
+    <!--link rel="stylesheet" type="text/css" href="reset.css"-->
+    <script src="js/js_script.js" defer></script>
+    <script src="https://vuejs.org/js/vue.js" defer></script>
+    <script src="js/vue_script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <title>Burger Heaven Online</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+      <main>
+	<header>
+	  <img src="img/bar_cropped.jpg" id="bar" alt="bar" title="bar" height="200">
+	  <h1>Welcome to Burger Heaven Online</h1>
+	</header>
+	<section id="burger_section">
+	  
+	  <h2>Select a burger</h2>
+	  <p>This is where you execute burger selection</p>
+	  <div id="burgers">
+	      <div v-for="burger in burgers"> 
+		{{ burger.name }} 34
+		<img v-bind:src="burger.picture" height=150>
+		<ul>
+		  <li v-if="burger.gluten">
+		    Contains Gluten
+		  </li>
+		  <li v-if="burger.lactose">
+		    Contains Lactose
+		  </li>
+		</ul>
+	      </div>
 	  </div>
 	</section>
 	
@@ -106,30 +178,3 @@
 </html>
 
 
-
-
-                        
-<!-- VUE
-
-<script src="https://vuejs.org/js/vue.js"></script>
-
-<div id="div1">
-
-  <h1>{{ burgerSectionTitle }}</h1>
-  
-  <ul>
-    <li v-for="burger in burgers"> 
-      {{ burger.name }}
-      <ul>
-	<li v-if="burger.gluten">
-          Contains Gluten
-	</li>
-	<li v-if="burger.lactose">
-          Contains Gluten
-	</li>
-      </ul>
-    </li>
-  </ul>
-</div>
-
--->
