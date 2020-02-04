@@ -1,10 +1,9 @@
-function menuItem(picture, name, kcal, gluten, lactose) {
+/*function menuItem(picture, name, kcal, gluten, lactose) {
     this.picture = picture;
     this.name = name;
     this.kcal = kcal;
     this.gluten = gluten;
     this.lactose = lactose;
-    this.stringPath = picture.toString();
 
     this.getName = function() {
 	return this.name;
@@ -25,7 +24,7 @@ let longBurger = new menuItem("img/long_burger.jpg", "Long Burger", kcal=850, gl
 let tower = new menuItem("img/the_tower.jpg", "The Tower", kcal=2000, gluten=true, lactose=true);
 
 var burgers = [fireBurger, turkeyBurger, doubleCheese, tower, longBurger];
-
+*/
 /*
 var element = document.getElementById("burgers");
 

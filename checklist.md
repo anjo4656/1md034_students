@@ -61,7 +61,7 @@ Add the following style/behaviour to your website (mostly in style.css but also 
 - [X] Update js_script.js and vue_script.js again with your array + loop solutions
 - [X] Rewrite js_script.js and index.html to insert your five burgers dynamically to the burger selection section using JavaScript
 - [X] Rewrite vue_script.js and index.html to insert your five burgers dynamically to the burger selection section using Vue
-- [ ] Create a menu.js file with an array containing your five burgers in JSON format
+- [X] Create a menu.js file with an array containing your five burgers in JSON format
 - [ ] Remove the menuItem constructor and the instantiation of your five burgers from js_script.js
 - [ ] Update vue_script.js to get the burgers from menu.js instead
 - [ ] Create an event listener in js_script.js connected to your order button
