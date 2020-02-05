@@ -6,6 +6,15 @@ body {
     font-size: 18px;
 }
 
+ul {
+    margin: 5px 0px;
+}
+
+#orderPrint{
+    margin-bottom: 100px;
+}
+
+
 .allergen {
     font-weight: bold;
 }

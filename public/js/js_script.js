@@ -1,3 +1,24 @@
+/*
+let orderButton = document.getElementById('orderButton');
+
+orderButton.addEventListener("click", readForm);
+
+function buttonClicked(){
+    console.log("Button Clicked!");
+}
+
+function readForm(){
+    fullName = document.getElementById('full name').value;
+    email = document.getElementById('email').value;
+    street = document.getElementById('street').value;
+    house = document.getElementById('house').value;
+    paymentMethod = document.getElementById('payment method').value;
+    gender = document.querySelector('input[name="gender"]:checked').id;
+
+    infoArray = [fullName, email, street, house, paymentMethod, gender];
+    return infoArray;
+}
+*/
 /*function menuItem(picture, name, kcal, gluten, lactose) {
     this.picture = picture;
     this.name = name;
