@@ -125,9 +125,5 @@ element.appendChild(turkeyBurgerPara);
 element.appendChild(doubleCheesePara);
 element.appendChild(towerPara);
 element.appendChild(longBurgerPara);
-*/
-/*
-const vm = new Vue({
-    //Here comes the optional elements of the Vue object
-})
+
 */

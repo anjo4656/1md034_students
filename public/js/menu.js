@@ -29,7 +29,7 @@ let food = [
     },
     {
 	"name": "Long Burger",
-	"picture": "img/long_burger.jpg",
+	"picture": "img/long_burger.png",
 	"kcal": 850,
 	"gluten": true,
 	"lactose": false,

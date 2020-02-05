@@ -3,7 +3,6 @@
 const burgerSection = new Vue({
   el: '#burgers',
   data: {
-      /*burgers: [fireBurger, turkeyBurger, doubleCheese, tower, longBurger],*/
       burgers: food,
       checkedBurgers: [],
   },
@@ -40,18 +39,18 @@ const emailField = new Vue({
 const paymentField = new Vue({
     el: '#payment',
     data: {
-	selected: ''
+	selected: 'Credit Card'
     }
 })
 
 const genderField = new Vue({
     el: '#gender',
     data: {
-	male: "male",
-	female: "female",
-	nonBinary: "nonBinary",
-	undisclosed: "undisclosed",
-	pick: ''
+	male: "Male",
+	female: "Female",
+	nonBinary: "Non\-Binary",
+	undisclosed: "Undisclosed",
+	pick: 'Undisclosed'
     }
 })
 
@@ -59,10 +58,33 @@ const order = new Vue({
     el: '#orders',
    
     methods: {
-        placeOrder: function() {           
-	    /*console.log([nameField.name, emailField.email, streetField.street, houseField.house, paymentField.selected, genderField.pick]);*/
-	    orderPrint.print();
-        }
+        placeOrder: function() {
+            if (nameField.name && emailField.email && streetField.street &&
+		houseField.house && paymentField.selected &&
+		genderField.pick &&
+		burgerSection.checkedBurgers.length != 0){		
+		orderPrint.print();
+	    }
+	    else{
+		orderPrint.show = false;
+		orderPrint.error = true;
+		if (!(nameField.name && emailField.email &&
+		      streetField.street && houseField.house &&
+		      paymentField.selected && genderField.pick)){
+		    orderPrint.formError = true;
+		}
+		else{
+		    orderPrint.formError = false;
+		}
+		if(burgerSection.checkedBurgers.length == 0)
+		{
+		    orderPrint.emptyOrder = true;
+		}
+		else {
+		    orderPrint.emptyOrder = false;
+		}
+	    }
+	}
     }
 });
 
@@ -71,14 +93,23 @@ const orderPrint = new Vue({
     data: {
 	show: false,
 	information: null,
-	categories: ["Name: ", "Email: ", "Street: ", "House: ", "Payment Method: ", "Gender: "],
-	ordered: null
+	categories: ["Name: ", "Email: ", "Street: ", "House: ",
+		     "Payment Method: ", "Gender: "],
+	ordered: null,
+	error: false,
+	formError: false,
+	emptyOrder: false,
     },
     methods: {
 	print: function() {
-	    this.information = [nameField.name, emailField.email, streetField.street, houseField.house, paymentField.selected, genderField.pick];
+	    this.information = [nameField.name, emailField.email,
+				streetField.street, houseField.house,
+				paymentField.selected, genderField.pick];
 	    this.show = true;
 	    this.ordered = burgerSection.checkedBurgers;
+	    this.error = false;
+	    this.formError = false;
+	    this.emptyOrder = false;
 	}
     }
 })

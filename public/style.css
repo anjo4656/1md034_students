@@ -2,31 +2,36 @@
 @import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
 
 body {
-    font-family: "Arial";
+    font-family: "Times New Roman";
     font-size: 18px;
 }
 
-ul {
-    margin: 5px 0px;
+header {
+    margin-left: 10px;
+    height: 200px;
+    overflow: hidden;
 }
 
-#orderPrint{
-    margin-bottom: 100px;
+#bar {
+    opacity: 0.35;
+    width: 100%;
 }
 
-
-.allergen {
-    font-weight: bold;
-}
-/*
-#lactose {
-        color: #00ffff;
+#burgers {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 200px 230px 200px;
+    text-align: center;
+    margin: 40px;
 }
 
 #gluten {
-        color: #ff5500;
+    font-weight: bold;
 }
-*/
+
+#lactose {
+    font-weight: bold;
+}
 
 #burger_section {
     color: #ffffff;
@@ -41,34 +46,28 @@ ul {
     border: 3px dashed #000000;
 }
 
-button:hover {
-    background-color: #cccccc;
-    cursor: pointer;	  
+#customerForm {
+    margin-left: 10px;
+}
+
+#orderPrint{
+    margin-bottom: 100px;
+    margin-left: 10px;
 }
 
 button {
     margin: 40px 10px;
 }
 
-table {
-    width: 65%;
-    margin: 0 auto;
-}
-
-th {
-    text-align: left;
+button:hover {
+    background-color: #cccccc;
+    cursor: pointer;	  
 }
 
 h1 {
     position: absolute;
     margin-top: -125px;
     margin-left: 10px;
-}
-
-header {
-    margin-left: 10px;
-    height: 200px;
-    overflow: hidden;
 }
 
 h2 {
@@ -79,25 +78,8 @@ p {
     margin-left: 10px;
 }
 
-#bar {
-    opacity: 0.5;
-    width: 100%;
+ul {
+    margin: 5px 0px;
+    text-align: left;
 }
 
-#burgers {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 200px 230px 200px;
-}
-
-.burger_1 {
-    grid-column: 1;
-}
-
-.burger_2 {
-    grid-column: 2;
-}
-
-.burger_3 {
-    grid-column: 3;
-}
