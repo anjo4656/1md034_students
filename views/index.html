@@ -3,6 +3,7 @@
   
   <head>
     <!--link rel="stylesheet" type="text/css" href="reset.css"-->
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script src="js/js_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js" defer></script>
@@ -63,7 +64,7 @@
 	      <input v-model="email" placeholder="Email address" type="email">
 	    </div>
 	  </p>
-	  <p>
+	  <!--<p>
 	    <div id ="street">
 	      <label for="street">Street</label><br>
 	      <input v-model="street" placeholder="Street name">
@@ -74,7 +75,7 @@
 	      <label for="house">House</label><br>
 	      <input v-model="house" placeholder="House number" type="number">
 	    </div>
-	  </p>
+	  </p>-->
 	  <p>
 	    <div id="payment">
 	      <label for="payment method">Payment Method</label><br />
@@ -98,7 +99,31 @@
 	      <label>Undisclosed</label><br />
 	    </div>
 	  </p>
-	</form>	  
+	</form>
+	<html>
+	  <head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>DELI-VERY MAP</title>
+	    <link rel="stylesheet" href="css/deli-very.css">
+	    <script src="/vue/vue.js" defer></script>
+	    <script src="/socket.io/socket.io.js" defer></script>
+	    <script src="js/deli-very.js" defer></script>
+	  </head>
+	  <body>
+	    <h1> Click in the map! </h1>
+	    <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+	    <div class="view-box">
+	      <div id="dots" v-on:click="addOrder">
+		<div 
+		  v-for="(order, key) in orders"
+		  v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+		  {{key}}
+		</div>
+	      </div>
+	    </div>
+	  </body>
+	</html>
       </section>
       
       <div id="orders">
