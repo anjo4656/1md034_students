@@ -62,7 +62,8 @@ const order = new Vue({
             if (nameField.name && emailField.email && /*streetField.street &&
 		houseField.house && */paymentField.selected &&
 		genderField.pick &&
-		burgerSection.checkedBurgers.length != 0){		
+		burgerSection.checkedBurgers.length != 0 &&
+		(vm.localOrder.x != 0 || vm.localOrder.y != 0)){		
 		orderPrint.print();
 		vm.addOrder();
 	    }
@@ -84,6 +85,14 @@ const order = new Vue({
 		else {
 		    orderPrint.emptyOrder = false;
 		}
+		if(vm.localOrder.x == 0 && vm.localOrder.y == 0)
+		{
+		    orderPrint.noLocation = true;
+		}
+		else {
+		    orderPrint.noLocation = false;
+		}
+
 	    }
 	}
     }
@@ -101,6 +110,7 @@ const orderPrint = new Vue({
 	error: false,
 	formError: false,
 	emptyOrder: false,
+	noLocation: false,
     },
     methods: {
 	print: function() {
@@ -112,6 +122,7 @@ const orderPrint = new Vue({
 	    this.error = false;
 	    this.formError = false;
 	    this.emptyOrder = false;
+	    this.noLocation = false;
 	}
     }
 })
@@ -127,6 +138,10 @@ const vm = new Vue({
       orders: {},
       localOrder: {x: 0, y: 0},
       numberOfOrders: 0,
+      customerInfo: {name: "",
+		     email: "",
+		     payment: "",
+		     gender: ""},
   },
     
   // created: function() {
@@ -134,7 +149,7 @@ const vm = new Vue({
   //    * (the server's code is in app.js) */
   //   socket.on('initialize', function(data) {
   //     this.orders = data.orders;
-  //   }.bind(this));
+  //   }.bind(thi,s));
 
   //   /* Whenever an addOrder is emitted by a client (every open map.html is
   //    * a client), the server responds with a currentQueue message (this is
@@ -166,7 +181,13 @@ const vm = new Vue({
       /*let offset = {
         x: event.currentTarget.getBoundingClientRect().left,
         y: event.currentTarget.getBoundingClientRect().top,
-      };*/
+	};*/
+
+	this.customerInfo.name = nameField.name;
+	this.customerInfo.email = emailField.email;
+	this.customerInfo.payment = paymentField.selected;
+	this.customerInfo.gender = genderField.pick;
+
       socket.emit('addOrder', {
         orderId: this.getNext(),
         details: {
@@ -174,6 +195,7 @@ const vm = new Vue({
           y: this.localOrder.y,
         },
           orderItems: burgerSection.checkedBurgers,
+	  customerInfo: this.customerInfo, 
       });
     },
       displayOrder: function(event) {

@@ -100,7 +100,7 @@
 	    </div>
 	  </p>
 	</form>
-	<html>
+	<br><br><br><br><br><br><br><br>
 	  <head>
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -110,8 +110,7 @@
 	    <script src="/socket.io/socket.io.js" defer></script>
 	    <script src="js/deli-very.js" defer></script>
 	  </head>
-	  <body>
-	    <h1> Click in the map! </h1>
+	    <h1>Select an order location on the map</h1>
 	    <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
 	    <div class="view-box">
 	      <div id="dots" v-on:click="displayOrder">
@@ -124,8 +123,6 @@
 		</div>
 	      </div>
 	    </div>
-	  </body>
-	</html>
       </section>
       
       <div id="orders">
@@ -142,6 +139,9 @@
 	  </div>
 	  <div v-if="emptyOrder">
 	    <li>Please select one or more burgers.</li>
+	  </div>
+	  <div v-if="noLocation">
+	    <li>Please select an order location on the map.</li>
 	  </div>
 	</ul>
 	<div v-if="show">
