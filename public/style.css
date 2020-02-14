@@ -23,6 +23,7 @@ header {
     grid-template-columns: 200px 230px 200px;
     text-align: center;
     margin: 40px;
+    
 }
 
 #gluten {
@@ -38,6 +39,7 @@ header {
     border: 3px dashed #ffffff;
     background-color: #000000;
     margin-left: 10px;
+
 }
 
 #customer_section {
