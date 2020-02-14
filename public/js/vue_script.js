@@ -14,21 +14,7 @@ const nameField = new Vue({
 	name: ''
     }
 })
-/*
-const streetField = new Vue({
-    el: '#street',
-    data: {
-	street: ''
-    }
-})
 
-const houseField = new Vue ({
-    el: '#house',
-    data:{
-	house: ''
-    }
-})
-*/
 const emailField = new Vue({
     el: '#email',
     data: {
@@ -131,7 +117,6 @@ const orderPrint = new Vue({
 'use strict';
 const socket = io();
 
-/* eslint-disable-next-line no-unused-vars */
 const vm = new Vue({
   el: '#dots',
   data: {
@@ -144,22 +129,6 @@ const vm = new Vue({
 		     gender: ""},
   },
     
-  // created: function() {
-  //   /* When the page is loaded, get the current orders stored on the server.
-  //    * (the server's code is in app.js) */
-  //   socket.on('initialize', function(data) {
-  //     this.orders = data.orders;
-  //   }.bind(thi,s));
-
-  //   /* Whenever an addOrder is emitted by a client (every open map.html is
-  //    * a client), the server responds with a currentQueue message (this is
-  //    * defined in app.js). The message's data payload is the entire updated
-  //    * order object. Here we define what the client should do with it.
-  //    * Spoiler: We replace the current local order object with the new one. */
-  //   socket.on('currentQueue', function(data) {
-  //     this.orders = data.orders;
-  //   }.bind(this));
-  // },
   methods: {
     getNext: function() {
       /* This function returns the next available key (order number) in
